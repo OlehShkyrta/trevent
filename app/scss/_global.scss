@@ -1,0 +1,110 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+} 
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+    font-size: inherit;
+}
+
+
+body{
+    min-width: 320px;
+    overflow-x: hidden;
+    position: relative;
+    color: #fff;
+    background-color: #000;
+    @extend %segoe-regular;
+    font-size: 19px;
+    line-height: 32px;
+}
+
+.container{
+    max-width: 1460px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.section__top{
+    border-top: 3px solid #4d4d4d;
+}
+
+.section__title{
+    margin-top: 59px;
+    text-align: center;
+    text-transform: uppercase;
+    @extend %segoe-bold; 
+    font-size: 37px;
+    line-height: 62px;
+    letter-spacing: 0.1;
+}
+
+.slick-slide:active, 
+.slick-slide:focus {
+    outline: none;
+}
+
+.slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.header__language,
+.header__menu {
+    .sublanguage__list,
+    .submenu__list{
+        background: #000;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 5;
+        width: 150px;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        transition: .5s ease-in-out;
+    }
+    .sublanguage__link,
+    .submenu__link{
+        color: white;
+        text-align: left;
+        padding: 12px 15px;
+        font-size: 13px;
+        text-transform: uppercase;
+        transition: all .3s;
+        &:hover{
+            color: #e6362c;
+          }
+    }
+    .sublanguage__item:last-child .sublanguage__link,
+    .submenu__item:last-child .submenu__link{
+        border-bottom: none;
+    }
+}
+
+.header__language:hover .sublanguage__list,
+.menu__item:hover .submenu__list{
+    opacity: 1;
+    transform: scaleY(1);
+}
